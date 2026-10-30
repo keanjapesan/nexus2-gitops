@@ -1,0 +1,24 @@
+image:
+  repository: sonatype/nexus
+  tag: "2.14.19-01"
+  pullPolicy: IfNotPresent
+
+# JVM heap, passed to the image's MIN_HEAP / MAX_HEAP env vars
+heap:
+  min: 256m
+  max: 768m
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    memory: 2Gi
+
+service:
+  type: NodePort   # lets `minikube service` open it
+  port: 8081
+
+persistence:
+  enabled: true    # false = data is lost when the pod is deleted
+  size: 8Gi        # uses minikube's default StorageClass
