@@ -1,4 +1,4 @@
-# containerized-nexus2
+# nexus2-gitops [WORK-IN-PROGRESS]
 
 Helm chart for Sonatype Nexus Repository Manager 2 (`sonatype/nexus:2.14.19-01`), deployed with Argo CD.
 

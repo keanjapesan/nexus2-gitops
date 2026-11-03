@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/keanjapesan/containerized-nexus2.git
+    repoURL: https://github.com/keanjapesan/nexus2-gitops.git
     targetRevision: main
     path: .
   destination:
