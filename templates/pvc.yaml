@@ -5,6 +5,8 @@ metadata:
   name: {{ .Release.Name }}-data
   labels:
     app: {{ .Release.Name }}
+  annotations:
+    argocd.argoproj.io/sync-options: Delete=false  # keep Nexus data when the Argo CD app is deleted
 spec:
   accessModes:
     - ReadWriteOnce

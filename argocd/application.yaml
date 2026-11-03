@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nexus2
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/foreground  # deleting the app also removes Nexus (the PVC is kept)
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/keanjapesan/containerized-nexus2.git
+    targetRevision: main
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nexus2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
