@@ -17,7 +17,7 @@ resources:
 
 service:
   type: NodePort   # lets `minikube service` open it
-  port: 8081
+  port: 8082
 
 persistence:
   enabled: true    # false = data is lost when the pod is deleted
