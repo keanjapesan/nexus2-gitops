@@ -16,7 +16,7 @@ resources:
     memory: 2Gi
 
 service:
-  type: NodePort   # lets `minikube service` open it
+  type: NodePort
   port: 8082
 
 persistence:
